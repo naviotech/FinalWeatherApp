@@ -18,14 +18,14 @@ const Complements = () => {
           <section className="flex gap-2">
             <section className="p-8 bg-gray-700/50 text-white rounded-xl opacity-80 w-full">
               <div className="flex items-center gap-2 mb-2">
-                <img src="../../public/svg/12.svg" alt="" className="w-7" />
+                <img src="/svg/12.svg" alt="" className="w-7" />
                 <h2 className="text-white/60 text-xs">SALIDA DE SOL</h2>
               </div>
               <p className="text-2xl">{new Date(info.sys.sunrise * 1000).toLocaleTimeString([], {hour: '2-digit', minute: '2-digit'})}</p>
             </section>
             <section className="p-8 bg-gray-700/50 text-white rounded-xl opacity-80 w-full">
               <div className="flex items-center gap-2 mb-2">
-                <img src="../../public/svg/11.svg" alt="" className="w-7" />
+                <img src="/svg/11.svg" alt="" className="w-7" />
                 <h2 className="text-white/60 text-xs">PUESTA DE SOL</h2>
               </div>
               <p className="text-2xl">{new Date(info.sys.sunset * 1000).toLocaleTimeString([], {hour: '2-digit', minute: '2-digit'})}</p>
@@ -36,7 +36,7 @@ const Complements = () => {
         <div className="flex flex-col gap-2 lg:h-full">
           <section className="p-8 bg-gray-700/50 text-white rounded-xl opacity-80">
             <div className="flex items-center gap-2 mb-2">
-              <img src="../../public/svg/5.svg" alt="" className="w-7" />
+              <img src="/svg/5.svg" alt="" className="w-7" />
               <h2 className="text-white/60 text-xs">VIENTO</h2>
             </div>
             <div className="flex gap-2 items-center justify-between">
@@ -51,14 +51,14 @@ const Complements = () => {
           <section className="flex gap-2">
             <section className="p-8 bg-gray-700/50 text-white rounded-xl opacity-80 w-full">
               <div className="flex items-center gap-2 mb-2">
-                <img src="../../public/svg/10.svg" alt="" className="w-7" />
+                <img src="/svg/10.svg" alt="" className="w-7" />
                 <h2 className="text-white/60 text-xs">VISIBILIDAD</h2>
               </div>
               <p className="text-2xl">{info.visibility/1000} km</p>
             </section>
             <section className="p-8 bg-gray-700/50 text-white rounded-xl opacity-80 w-full">
               <div className="flex items-center gap-2 mb-2">
-                <img src="../../public/svg/8.svg" alt="" className="w-7" />
+                <img src="/svg/8.svg" alt="" className="w-7" />
                 <h2 className="text-white/60 text-xs">HUMEDAD</h2>
               </div>
               <p className="text-2xl">{info.main.humidity} %</p>
@@ -67,7 +67,7 @@ const Complements = () => {
 
           <section className="p-8 bg-gray-700/50 text-white rounded-xl opacity-80 mb-12 lg:h-full lg:mb-0 lg:flex lg:flex-col lg:justify-center">
             <div className="flex items-center gap-2 mb-4">
-              <img src="../../public/svg/9.svg" alt="" className="w-7" />
+              <img src="/svg/9.svg" alt="" className="w-7" />
               <h2 className="text-white/60 text-xs">SENSACIÓN</h2>
             </div>
             <div className="flex gap-2 items-center justify-between">

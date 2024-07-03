@@ -40,8 +40,14 @@ const LocationPermission: React.FC = () => {
     <div className='w-full justify-center items center'>
       {error &&
         <>
-          <p>Error: {error}</p>
-          <Search/>
+          <div className='flex flex-col gap-7 justify-center items-center mt-5'>
+            <p>Error: {error}</p>
+            <div className='flex lg:justify-center items-center' >
+              <Search/>
+            </div>
+            
+          </div>
+          
         </>
       }
       {!location && !error && <div className='w-full justify-center items-center flex flex-col'> 

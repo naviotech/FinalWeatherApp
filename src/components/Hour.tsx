@@ -18,9 +18,9 @@ const Hour = () => {
       case 231:
       case 232:
         if(hour>21 || hour<6){
-          return "/public/svg/15.svg"
+          return "/svg/15.svg"
         }
-        return "/public/svg/3.svg";
+        return "/svg/3.svg";
   
       // Grupo 3xx: Llovizna
       case 300:
@@ -33,9 +33,9 @@ const Hour = () => {
       case 314:
       case 321:
         if(hour>21 || hour<7){
-          return "/public/svg/14.svg"
+          return "/svg/14.svg"
         }
-        return "/public/svg/2.svg";
+        return "/svg/2.svg";
   
       // Grupo 5xx: Lluvia
       case 500:
@@ -49,9 +49,9 @@ const Hour = () => {
       case 522:
       case 531:
         if(hour>21 || hour<7){
-          return "/public/svg/14.svg"
+          return "/svg/14.svg"
         }
-        return "/public/svg/2.svg";
+        return "/svg/2.svg";
   
       // Grupo 6xx: Nieve
       case 600:
@@ -65,7 +65,7 @@ const Hour = () => {
       case 620:
       case 621:
       case 622:
-        return "/public/svg/7.svg";
+        return "/svg/7.svg";
       
       // Grupo 7xx: Atmósfera
       case 701:
@@ -79,31 +79,31 @@ const Hour = () => {
       case 771:
       case 781:
         if(hour>21 || hour<7){
-          return "/public/svg/13.svg"
+          return "/svg/13.svg"
         }
-        return "/public/svg/6.svg";
+        return "/svg/6.svg";
   
       // Grupo 800: Claro
       case 800:
         if(hour>21 || hour<7){
-          return "/public/svg/16.svg"
+          return "/svg/16.svg"
         }
-        return "/public/svg/4.svg";
+        return "/svg/4.svg";
   
       // Grupo 80x: Nubes
       case 801:
       case 802:
       case 803:
         if(hour>21 || hour<7){
-          return "/public/svg/13.svg"
+          return "/svg/13.svg"
         }
-        return "/public/svg/1.svg"
+        return "/svg/1.svg"
 
       case 804:
         if(hour>21 || hour<7){
-          return "/public/svg/13.svg"
+          return "/svg/13.svg"
         }
-        return "/public/svg/6.svg";
+        return "/svg/6.svg";
     }
   }
   return (

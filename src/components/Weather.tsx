@@ -23,9 +23,9 @@ const Weather = () => {
       case 231:
       case 232:
         if(hour>21 || hour<6){
-          return "/public/video/noche.mp4"
+          return "/video/noche.mp4"
         }
-        return "/public/video/tormenta.mp4";
+        return "/video/tormenta.mp4";
   
       // Grupo 3xx: Llovizna
       case 300:
@@ -38,9 +38,9 @@ const Weather = () => {
       case 314:
       case 321:
         if(hour>21 || hour<6){
-          return "/public/video/noche.mp4"
+          return "/video/noche.mp4"
         }
-        return "/public/video/lluvia.mp4";
+        return "/video/lluvia.mp4";
   
       // Grupo 5xx: Lluvia
       case 500:
@@ -54,9 +54,9 @@ const Weather = () => {
       case 522:
       case 531:
         if(hour>21 || hour<6){
-          return "/public/video/noche.mp4"
+          return "/video/noche.mp4"
         }
-        return "/public/video/lluvia.mp4";
+        return "/video/lluvia.mp4";
   
       // Grupo 6xx: Nieve
       case 600:
@@ -71,9 +71,9 @@ const Weather = () => {
       case 621:
       case 622:
         if(hour>21 || hour<6){
-          return "/public/video/noche.mp4"
+          return "/video/noche.mp4"
         }
-        return "/public/video/nubes.mp4";
+        return "/video/nubes.mp4";
       
       // Grupo 7xx: Atmósfera
       case 701:
@@ -87,31 +87,31 @@ const Weather = () => {
       case 771:
       case 781:
         if(hour>21 || hour<6){
-          return "/public/video/noche.mp4"
+          return "/video/noche.mp4"
         }
-        return "/public/video/nubes.mp4";
+        return "/video/nubes.mp4";
   
       // Grupo 800: Claro
       case 800:
         if(hour>21 || hour<6){
-          return "/public/video/noche.mp4"
+          return "/video/noche.mp4"
         }
-        return "/public/video/claro.mp4";
+        return "/video/claro.mp4";
   
       // Grupo 80x: Nubes
       case 801:
       case 802:
       case 803:
         if(hour>21 || hour<6){
-          return "/public/video/noche.mp4"
+          return "/video/noche.mp4"
         }
-        return "/public/video/nubesSol.mp4"
+        return "/video/nubesSol.mp4"
       
       case 804:
         if(hour>21 || hour<6){
-          return "/public/video/noche.mp4"
+          return "/video/noche.mp4"
         }
-        return "/public/video/nubes.mp4";
+        return "/video/nubes.mp4";
     }
   }
   return (

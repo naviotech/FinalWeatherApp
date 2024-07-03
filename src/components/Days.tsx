@@ -3,7 +3,7 @@ import useApi from "../hooks/useApi"
 const Days = () => {
   const {infoDay} = useApi()
   const handleSvg = (item:string|null)=>{
-    if (item === null) return "/public/svg/1.svg";
+    if (item === null) return "/svg/1.svg";
     switch (+item) {
       // Grupo 2xx: Tormenta
       case 200:
@@ -16,7 +16,7 @@ const Days = () => {
       case 230:
       case 231:
       case 232:
-        return "/public/svg/3.svg";
+        return "/svg/3.svg";
   
       // Grupo 3xx: Llovizna
       case 300:
@@ -28,7 +28,7 @@ const Days = () => {
       case 313:
       case 314:
       case 321:
-        return "/public/svg/2.svg";
+        return "/svg/2.svg";
   
       // Grupo 5xx: Lluvia
       case 500:
@@ -41,7 +41,7 @@ const Days = () => {
       case 521:
       case 522:
       case 531:
-        return "/public/svg/2.svg";
+        return "/svg/2.svg";
   
       // Grupo 6xx: Nieve
       case 600:
@@ -55,7 +55,7 @@ const Days = () => {
       case 620:
       case 621:
       case 622:
-        return "/public/svg/7.svg";
+        return "/svg/7.svg";
       
       // Grupo 7xx: Atmósfera
       case 701:
@@ -68,20 +68,20 @@ const Days = () => {
       case 762:
       case 771:
       case 781:
-        return "/public/svg/6.svg";
+        return "/svg/6.svg";
   
       // Grupo 800: Claro
       case 800:
-        return "/public/svg/4.svg";
+        return "/svg/4.svg";
   
       // Grupo 80x: Nubes
       case 801:
       case 802:
       case 803:
-        return "/public/svg/1.svg"
+        return "/svg/1.svg"
 
       case 804:
-        return "/public/svg/6.svg";
+        return "/svg/6.svg";
     }
   }
   return (
@@ -95,7 +95,7 @@ const Days = () => {
               </div>
               <div className="flex gap-10 items-center">
                 <p>{item.averageTemp}°</p>
-                <img src="/public/svg/9.svg" alt="weather" />
+                <img src="/svg/9.svg" alt="weather" />
               </div>
             </div>
           ))}
