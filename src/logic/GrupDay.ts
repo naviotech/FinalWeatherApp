@@ -61,23 +61,46 @@ export default function orderDay(array : WeatherDay) {
   })
   const set = new Set(days)
   const daysFinally = [...set]
+  if(daysFinally.length === 5){
+    const day1  = array.filter(item => item.dt_txt.slice(0,10) === daysFinally[0]).filter(item => +item.dt_txt.slice(11,13)>5)
+    const day1Formated = average(day1)
+    
+    const day2  = array.filter(item => item.dt_txt.slice(0,10) === daysFinally[1])
+    const day2Formated = average(day2)
+
+    const day3  = array.filter(item => item.dt_txt.slice(0,10) === daysFinally[2])
+    const day3Formated = average(day3)
+
+    const day4  = array.filter(item => item.dt_txt.slice(0,10) === daysFinally[3])
+    const day4Formated = average(day4)
+
+    const day5  = array.filter(item => item.dt_txt.slice(0,10) === daysFinally[4])
+    const day5Formated = average(day5)
+
+    return [day1Formated, day2Formated, day3Formated, day4Formated, day5Formated]
+  }
+  if(daysFinally.length === 6){
+    const day1  = array.filter(item => item.dt_txt.slice(0,10) === daysFinally[0]).filter(item => +item.dt_txt.slice(11,13)>5)
+    const day1Formated = average(day1)
+    
+    const day2  = array.filter(item => item.dt_txt.slice(0,10) === daysFinally[1])
+    const day2Formated = average(day2)
+
+    const day3  = array.filter(item => item.dt_txt.slice(0,10) === daysFinally[2])
+    const day3Formated = average(day3)
+
+    const day4  = array.filter(item => item.dt_txt.slice(0,10) === daysFinally[3])
+    const day4Formated = average(day4)
+
+    const day5  = array.filter(item => item.dt_txt.slice(0,10) === daysFinally[4])
+    const day5Formated = average(day5)
+
+    const day6  = array.filter(item => item.dt_txt.slice(0,10) === daysFinally[5])
+    const day6Formated = average(day6)
+
+    return [day1Formated, day2Formated, day3Formated, day4Formated, day5Formated, day6Formated]
+  }
   
-  const day1  = array.filter(item => item.dt_txt.slice(0,10) === daysFinally[1]).filter(item => +item.dt_txt.slice(11,13)>5)
-  const day1Formated = average(day1)
-  
-  const day2  = array.filter(item => item.dt_txt.slice(0,10) === daysFinally[2])
-  const day2Formated = average(day2)
-
-  const day3  = array.filter(item => item.dt_txt.slice(0,10) === daysFinally[3])
-  const day3Formated = average(day3)
-
-  const day4  = array.filter(item => item.dt_txt.slice(0,10) === daysFinally[4])
-  const day4Formated = average(day4)
-
-  const day5  = array.filter(item => item.dt_txt.slice(0,10) === daysFinally[5])
-  const day5Formated = average(day5)
-
-  return [day1Formated, day2Formated, day3Formated, day4Formated, day5Formated]
 }
 
 

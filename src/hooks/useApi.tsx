@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import { useUbication } from "./useUbication"
 import { z } from 'zod'
 import {Weather, WeatherHour, WeatherDay} from "../types"
-import orderDay from "../logic/GrupDay"
+import orderDay from "../logic/GrupDay.ts"
 type DaysFormated = {
   day: string;
   mostFrequentCondition: string | null;
@@ -20,13 +20,22 @@ const useApi = () => {
   useEffect(()=>{
     const existUbication= async()=>{
       if(ubication.latitude !== 0){
-        const key = import.meta.env.VITE_API_KEY
-        const url = `https://api.openweathermap.org/data/2.5/weather?&lang=es&lat=${ubication.latitude.toFixed(2)}&lon=${ubication.longitude.toFixed(2)}&appid=${key}&units=metric`
-        const response = await fetch(url)
-        const data = await response.json()
-        const parsedData = Weather.parse(data)
+        try {
+          const key = import.meta.env.VITE_API_KEY
+          const url = `https://api.openweathermap.org/data/2.5/weather?&lang=es&lat=${ubication.latitude.toFixed(2)}&lon=${ubication.longitude.toFixed(2)}&appid=${key}&units=metric`
+          const response = await fetch(url)
+          if(!response.ok){
+            throw new Error("http error");
+            
+          }
+          const data = await response.json()
+          const parsedData = Weather.parse(data)
+          
+          setInfo(parsedData)
+        } catch (error) {
+          console.log(error)
+        }
         
-        setInfo(parsedData)
       }
 
     }
@@ -41,7 +50,9 @@ const useApi = () => {
           const url = `https://api.openweathermap.org/data/2.5/forecast?lat=${ubication.latitude.toFixed(2)}&lon=${ubication.longitude.toFixed(2)}&appid=${key}&units=metric&lang=es`
           const response = await fetch(url)
           const data = await response.json()
-          
+          if(!response.ok){
+            throw new Error("https error")
+          }
           
           orderDay(data.list)
 
@@ -51,7 +62,11 @@ const useApi = () => {
 
 
           const dataDay = WeatherDay.parse(data.list)
-          setInfoDay(orderDay(dataDay))
+          const dataFormated = orderDay(dataDay)
+          if(dataFormated !== undefined){
+            setInfoDay(dataFormated)
+          }
+          
         } catch (error) {
           console.error(error)
         }

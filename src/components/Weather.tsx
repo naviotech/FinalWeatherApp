@@ -118,7 +118,7 @@ const Weather = () => {
     <>
       {info && (
         <div className="relative h-screen max-w-screen-lg lg:flex lg:flex-col lg:items-center lg:justify-center lg:pb-8">
-          <video className="fixed top-0 left-0 w-full h-full object-cover " src={getVideoSource(info.weather[0].id, info.dt)} autoPlay loop muted></video>
+          <video className="fixed top-0 left-0 w-full h-full object-cover " src={getVideoSource(info.weather[0].id, info.dt)} playsInline autoPlay loop muted ></video>
       
           <div className="relative top-0 left-0 w-full h-screen flex flex-col items-center gap-3 py-10 lg:pb-0">
             
