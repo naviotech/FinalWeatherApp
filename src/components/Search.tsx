@@ -1,33 +1,38 @@
 import { useState, useRef } from "react";
-import { useJsApiLoader, Autocomplete } from "@react-google-maps/api";
+import { useJsApiLoader, Autocomplete, Libraries } from "@react-google-maps/api";
 import { useUbication } from "../hooks/useUbication";
 
+const libraries: Libraries = ['places']
+
 const Search = () => {
-  const [input, setInput] = useState('');
+  const [input, setInput] = useState('')
   const {setUbication} = useUbication()
 
-  const autocompleteRef = useRef(null);
+  const autocompleteRef = useRef<google.maps.places.Autocomplete>()
 
   const { isLoaded } = useJsApiLoader({
     googleMapsApiKey: import.meta.env.VITE_API_KEY_GOOGLE,
-    libraries: ['places'],
+    libraries: libraries,
   });
 
   if (!isLoaded) {
-    return <div>Loading...</div>;
+    return <div>Loading...</div>
   }
 
   const handlePlaceChanged = () => {
-    if (autocompleteRef.current !== null) {
+    if (autocompleteRef.current !== null && autocompleteRef.current) {
       const place = autocompleteRef.current.getPlace()
-      setInput(place.formatted_address)
-      const viewport = place.geometry.viewport;
-      const latitude = (viewport.getNorthEast().lat() + viewport.getSouthWest().lat()) / 2;
-      const longitude = (viewport.getNorthEast().lng() + viewport.getSouthWest().lng()) / 2;
-      setUbication({ latitude: latitude, longitude: longitude });
-      setInput('')
+      setInput(place.formatted_address || "")
+      const viewport = place?.geometry?.viewport
+      if(viewport){
+        const latitude = (viewport.getNorthEast().lat() + viewport.getSouthWest().lat()) / 2
+        const longitude = (viewport.getNorthEast().lng() + viewport.getSouthWest().lng()) / 2
+        setUbication({ latitude: latitude, longitude: longitude })
+        setInput('')
+      }
+      
     }
-  };
+  }
 
   return (
     <form className="mb-8 lg:mb-0 lg:w-[30%] lg:self-end cursor-pointer">
@@ -45,6 +50,7 @@ const Search = () => {
           ></path>
         </svg>
         <Autocomplete
+          className=""
           onLoad={(autocomplete) => (autocompleteRef.current = autocomplete)}
           onPlaceChanged={handlePlaceChanged}
         >
@@ -60,7 +66,7 @@ const Search = () => {
         </Autocomplete>
       </label>
     </form>
-  );
-};
+  )
+}
 
-export default Search;
+export default Search
