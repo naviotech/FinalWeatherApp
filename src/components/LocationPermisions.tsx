@@ -41,7 +41,7 @@ const LocationPermission: React.FC = () => {
       {error &&
         <>
           <div className='flex flex-col gap-7 justify-center items-center mt-5'>
-            <p>Error: {error}</p>
+            <p>Activa la Localización en tus ajustes para una mejor experiencia</p>
             <div className='flex lg:justify-center items-center' >
               <Search/>
             </div>
