@@ -23,7 +23,7 @@ const Weather = () => {
       case 231:
       case 232:
         if(hour>21 || hour<6){
-          return "/video/noche.mp4"
+          return "/video/tormentaNoche.mp4"
         }
         return "/video/tormenta.mp4";
   
